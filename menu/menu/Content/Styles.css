@@ -1,0 +1,187 @@
+﻿html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+}
+.header {
+    height:50px;
+    background:#2b2b2b;
+    color:white;
+    font-size:20px;
+    text-transform:uppercase;
+    font-weight:bold;
+    padding-left:50px;
+    letter-spacing: 5px;
+    padding-top:12px;
+}
+.menu-link {
+    position: absolute;
+    color:white;
+    right: -49px;
+    padding:3px;
+    top:49px;
+    text-align:center;
+    bottom: 0;
+    width: 40px;
+    height: 40px;
+    z-index: 999;
+    background:#2b2b2b;
+}
+.menu-link:visited,
+.menu-link:active,
+.menu-link:hover
+ {
+    color:white;
+}
+.r-body {
+    background-image: url("images/fondo_.jpg");
+    background-size: 100% 100%;
+    width:100%;
+    padding-left:2px;
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    -webkit-transition: 0.15s ease;
+    -moz-transition: 0.15s ease;
+    -o-transition: 0.15s ease;
+    transition: 0.15s ease;  
+}
+
+.r-body.active {
+    -webkit-transform: translate(250px, 0px);
+    -moz-transform: translate(250px, 0px);
+    -o-transform: translate(250px, 0px);
+    -ms-transform: translate(250px, 0px);
+    transform: translate(250px, 0px);
+}
+#cssmenu li:hover {
+}
+
+#cssmenu ul,
+#cssmenu li{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    list-style: none;
+    font-weight: normal;
+    text-decoration: none;
+    line-height: 1;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    position: relative;
+}
+
+#cssmenu a {
+    text-decoration:none;
+    line-height: 2.2;
+}
+
+
+#cssmenu {
+
+    border-right:solid 10px #2b2b2b;
+    background:#3a3a3a;
+    position: fixed;
+    top:0px;
+    bottom: 0;
+    width: 249px;
+    height: 100%;
+    left:-251px;
+    z-index: 999;
+    -webkit-transform: translate(0px, 0px);
+    -moz-transform: translate(0px, 0px);
+    -o-transform: translate(0px, 0px);
+    -ms-transform: translate(0px, 0px);
+    transform: translate(0px, 0px);
+    -webkit-transition: 0.15s ease;
+    -moz-transition: 0.15s ease;
+    -o-transition: 0.15s ease;
+    transition: 0.15s ease;
+}
+
+#cssmenu.active {
+    -webkit-transform: translate(250px, 0px);
+    -moz-transform: translate(250px, 0px);
+    -o-transform: translate(250px, 0px);
+    -ms-transform: translate(250px, 0px);
+    transform: translate(250px, 0px);
+}
+#cssmenu > ul > li > a {
+    padding-right: 40px;
+    font-size: 25px;
+    font-weight: bold;
+    display: block;
+    background: #2b2b2b;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+#cssmenu > ul > li > a > span {
+    background: #3a3a3a;
+    padding: 10px;
+    padding-left:15px;
+    display: block;
+    border-left:solid 3px rgba(0, 0, 0, 0.00);
+    font-size: 13px;
+    font-weight: 300;
+}
+#cssmenu > ul > li > a > span:hover {
+    background:#2b2b2b;
+}
+
+#cssmenu > ul > li.active {
+}
+
+#cssmenu > ul > li.active > a {
+    color: #fff;
+    background: #2b2b2b;
+    
+}
+
+
+#cssmenu > ul > li.active > a span {
+    background: #2b2b2b;
+    border-left:solid 3px #0369ad;
+}
+
+#cssmenu span.cnt {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    padding: 0;
+    margin: 0;
+    background: #2b2b2b;
+}
+    #cssmenu > ul > li.active > a span.cnt {
+        border-left:none;
+    }
+/* Sub menu */
+#cssmenu ul ul {
+    display: none;
+}
+
+#cssmenu ul ul li {
+    border: 1px solid #e0e0e0;
+    border-top: 0;
+}
+
+#cssmenu ul ul a {
+    padding: 10px;
+    display: block;
+    color: #2b2b2b;
+    font-size: 13px;
+}
+
+#cssmenu ul ul a:hover {
+    color: #bd0e36;
+}
+
+#cssmenu ul ul li.odd {
+    background: #f4f4f4;
+}
+
+#cssmenu ul ul li.even {
+    background: #fff;
+}

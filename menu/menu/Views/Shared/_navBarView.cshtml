@@ -1,0 +1,35 @@
+﻿@model IEnumerable<menu.Models.menuLink>
+
+@{
+    var lst = Model.ToList();
+}
+@foreach (var item in lst)
+{
+    if (item.parentId == 0)
+    {
+        <ul>
+            @{
+                var childList = Model.Where(m => m.parentId == item.ID).ToList();
+            }
+            <li @(childList != null && childList.Count > 0 ? "class=\"has-sub\"" : String.Empty)>
+            <a href="@item.menuURl"> <span>@item.menuText</span></a>
+            @{
+                if (childList != null && childList.Count > 0)
+                {
+                    <ul>
+                        @foreach (var c in childList)
+                        {
+                            <li @(c.last == true ? "class=\"last\"" : String.Empty)>
+                                <a href="@c.menuURl">@c.menuText</a>
+                            </li>
+                        }
+                    </ul>
+                }
+            }
+            </li>
+        </ul>
+    }
+
+}
+
+
