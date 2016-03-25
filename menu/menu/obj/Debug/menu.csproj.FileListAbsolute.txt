@@ -24,3 +24,4 @@ C:\Users\alem1324\Desktop\JTH3\extraJobb\menu\menu\bin\Newtonsoft.Json.xml
 C:\Users\alem1324\Desktop\JTH3\extraJobb\menu\menu\obj\Debug\menu.csprojResolveAssemblyReference.cache
 C:\Users\alem1324\Desktop\JTH3\extraJobb\menu\menu\obj\Debug\menu.dll
 C:\Users\alem1324\Desktop\JTH3\extraJobb\menu\menu\obj\Debug\menu.pdb
+C:\Users\alem1324\Desktop\JTH3\extraJobb\menu\menu\bin\SimpleCrypto.dll

@@ -1,0 +1,46 @@
+﻿<script type="text/javascript" language="javascript">
+    function viewMsg(data, status, xhr) {
+        if (data.msg == "success") {
+            window.location.href = "../home/index";
+        } else {
+            $("#result").text(data.msg);
+        }
+        return true;
+    };
+    function clearFeedback() {
+        $("#result").empty();
+    }
+</script>
+
+@using (Ajax.BeginForm("Login", new AjaxOptions
+        {
+            HttpMethod = "POST",
+            OnBegin = "clearFeedback",
+            OnSuccess = "viewMsg",
+            LoadingElementId = "spinner"
+        }))
+{
+    <li class="dropdown-header">Logga in här</li>
+    <li class="divider"></li>
+    <li>
+        <div id="login-content">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    <input id="user" type="text" class="form-control" name="user" required placeholder="Personnummer">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input id="password" type="password" class="form-control" name="password" required placeholder="Lösenord">
+                </div>
+                <div class="form-group">
+                    
+                    <button id="submit" type="submit" class="btn btn-primary" value="Login"><i class="glyphicon glyphicon-log-in"></i> Logga in</button>
+                </div>
+        </div>
+    </li>
+    <li class="divider"></li>
+    <div id="spinner" style="display:none; text-align:center;">
+        <img src="~/Content/images/spiffygif_34x34.gif"/>
+    </div>
+    <li class="text-danger" style="padding-left: 10px; font-size:15px; letter-spacing:0px;" id="result"></li>
+}

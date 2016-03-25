@@ -15,10 +15,10 @@ namespace menu.Models
         public bool last { get; set; }
 
         /*Metod: Hämtar alla länkarna från databasen och sparar dem i en lista*/
-        public static List<menuLink> getAllLinks()
+        public static List<menuLink> getAllLinks(int roleId)
         {
             //string som har en sql query
-            string SQL = "SELECT * FROM [dbo].[menuLinks] ORDER BY [ID]";
+            string SQL = "SELECT * FROM [dbo].[menuLinks] WHERE [roleId] = " + roleId + " ORDER BY [ID]";
             List<menuLink> results = new List<menuLink>();
 
             //Kopplar till databasen som har en connection string som heter menuLinks

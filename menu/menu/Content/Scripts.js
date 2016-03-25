@@ -1,14 +1,15 @@
 ﻿(function ($) {
     $(document).ready(function () {
         $(document).ready(function () {
+            $('[data-toggle="popover"]').popover();
             $(".menu-link").click(function () {
                 $("#cssmenu").toggleClass("active");
                 $(".r-body").toggleClass("active");
-                if ($(".menu-link").hasClass("glyphicon-th-list")) {
-                    $(".menu-link").removeClass("glyphicon-th-list");
+                if ($(".menu-link").hasClass("meny-bild")) {
+                    $(".menu-link").removeClass("meny-bild");
                     $(".menu-link").toggleClass("glyphicon-menu-left");
                 } else {
-                    $(".menu-link").toggleClass("glyphicon-th-list");
+                    $(".menu-link").toggleClass("meny-bild");
                     $(".menu-link").removeClass("glyphicon-menu-left");
                 }
             });
