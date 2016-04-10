@@ -41,7 +41,7 @@ namespace menu.Models
         public User checkUser(User u)
         {
             User toreturn;
-            string SQL = "SELECT * FROM [dbo].[users-table] where username='" + u.userName + "';";
+            string SQL = "SELECT * FROM [dbo].[menuUser] where username='" + u.userName + "';";
             string _connectionString = DataSource.GetConnectionString("menuLinks");
             SqlConnection con = new SqlConnection(_connectionString);
             SqlCommand cmd = new SqlCommand(SQL, con);
