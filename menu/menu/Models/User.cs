@@ -12,13 +12,12 @@ namespace menu.Models
         public string userName { get; set; }
         public string password { get; set; }
         public int role { get; set; }
-        public string passSalt { get; set; }
 
         //skapar en användare i databasen
         public static void createUser(User u)
         {
-            string SQL = "INSERT INTO [dbo].[users-table]([userId],[username],[usersaltedPass],[passSalt],[roleId]) " +
-                         "VALUES" + " (" + u.userId + ", '" + u.userName + "', '" + u.password + "', '" + u.passSalt + "', " + u.role + ");";
+            string SQL = "INSERT INTO [dbo].[users-table]([userId],[username],[userPass],[roleId]) " +
+                         "VALUES" + " (" + u.userId + ", '" + u.userName + "', '" + u.password + "', '" + u.role + ");";
             string _connectionString = DataSource.GetConnectionString("menuLinks");
             SqlConnection con = new SqlConnection(_connectionString);
             SqlCommand cmd = new SqlCommand(SQL, con);
@@ -56,10 +55,9 @@ namespace menu.Models
                     while (dar.Read())
                     {
                         newUser.userName = dar["username"].ToString();
-                        newUser.password = dar["usersaltedPass"].ToString();
+                        newUser.password = dar["userPass"].ToString();
                         newUser.role = Convert.ToInt32(dar["roleId"]);
                         newUser.userId = Convert.ToInt32(dar["userId"]);
-                        newUser.passSalt = dar["passSalt"].ToString();
                     }
                     toreturn = newUser;
                 }

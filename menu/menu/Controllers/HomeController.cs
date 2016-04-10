@@ -12,19 +12,6 @@ namespace menu.Controllers
         //skapar en ny användare
         //Anrop den i ActionResult Index() sen kör programmet för att skapa en ny användare p.s ändra userId, userName, pass och role
         //Glöm inte att ta bort anropet efter du har skapat användaren så du inte skapar samma användare en gång till
-        private void createUser()
-        {
-            var crypto = new SimpleCrypto.PBKDF2();
-            Models.User addUser = new Models.User();
-            string pass = "1234";
-            addUser.userId = 2;
-            addUser.userName = "9207240178";
-            addUser.role = 1;
-            addUser.password = crypto.Compute(pass);
-            addUser.passSalt = crypto.Salt;
-
-            Models.User.createUser(addUser);
-        }
         public ActionResult Index()
         {
             return View();
@@ -67,7 +54,7 @@ namespace menu.Controllers
             Models.User loggedIn = u.checkUser(u); //kollar om anvädaren finns i databasen
             if (loggedIn != null)
             {
-                if (loggedIn.password == crypto.Compute(u.password, loggedIn.passSalt)) //kollar om lösenordet stämmer
+                if (loggedIn.password == u.password) //kollar om lösenordet stämmer
                 {
                     Session["user"] = loggedIn;
                     return Json(new { msg = "success"});
