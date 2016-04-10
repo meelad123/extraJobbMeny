@@ -16,7 +16,7 @@ namespace menu.Models
         //skapar en användare i databasen
         public static void createUser(User u)
         {
-            string SQL = "INSERT INTO [dbo].[users-table]([userId],[username],[userPass],[roleId]) " +
+            string SQL = "INSERT INTO [dbo].[menuUser]([userId],[username],[userPass],[roleId]) " +
                          "VALUES" + " (" + u.userId + ", '" + u.userName + "', '" + u.password + "', '" + u.role + ");";
             string _connectionString = DataSource.GetConnectionString("menuLinks");
             SqlConnection con = new SqlConnection(_connectionString);

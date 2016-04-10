@@ -33,17 +33,17 @@ namespace menu.Models
                 {
                     menuLink menuLinksDB = new menuLink();
                     menuLinksDB.ID = Convert.ToInt32(dar["ID"] );
-                    menuLinksDB.menuText = dar["text"] as string;
-                    menuLinksDB.menuURl = dar["url"] as string;
-                    if (!(dar["parentId"] is DBNull))
+                    menuLinksDB.menuText = dar["Text"] as string;
+                    menuLinksDB.menuURl = dar["Url"] as string;
+                    if (!(dar["ParentId"] is DBNull))
                     {
-                        menuLinksDB.parentId = Convert.ToInt32(dar["parentId"]);
+                        menuLinksDB.parentId = Convert.ToInt32(dar["ParentId"]);
                     }
                     else 
                     {
                         menuLinksDB.parentId = 0;
                     }
-                    menuLinksDB.last = Convert.ToBoolean(dar["last"]);
+                    menuLinksDB.last = Convert.ToBoolean(dar["Last"]);
 
                     results.Add(menuLinksDB);
                 }
