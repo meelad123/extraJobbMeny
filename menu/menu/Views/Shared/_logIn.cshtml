@@ -1,7 +1,7 @@
 ﻿<script type="text/javascript" language="javascript">
     function viewMsg(data, status, xhr) {
         if (data.msg == "success") {
-            window.location.href = "../home/index";
+            window.location.href = "../home/index#activate-menu";
         } else {
             $("#result").text(data.msg);
         }
@@ -10,6 +10,7 @@
     function clearFeedback() {
         $("#result").empty();
     }
+
 </script>
 
 @using (Ajax.BeginForm("Login", new AjaxOptions

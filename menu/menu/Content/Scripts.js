@@ -1,8 +1,14 @@
 ﻿(function ($) {
     $(document).ready(function () {
         $(document).ready(function () {
+            if (window.location.hash === "#activate-menu") {
+                showMenu();
+            }
             $('[data-toggle="popover"]').popover();
             $(".menu-link").click(function () {
+                showMenu();
+            });
+            function showMenu() {
                 $("#cssmenu").toggleClass("active");
                 $(".r-body").toggleClass("active");
                 if ($(".menu-link").hasClass("meny-bild")) {
@@ -12,7 +18,7 @@
                     $(".menu-link").toggleClass("meny-bild");
                     $(".menu-link").removeClass("glyphicon-menu-left");
                 }
-            });
+            }
             $('#cssmenu > ul > li ul').each(function (index, e) {
                 var count = $(e).find('li').length;
                 var content = '<span class=\"cnt\">' + count + '</span>';
