@@ -20,7 +20,7 @@
                         @foreach (var c in childList)
                         {
                             <li @(c.last == true ? "class=\"last\"" : String.Empty)>
-                                <a href="@c.menuURl">@c.menuText</a>
+                                <a href="@c.menuURl" target="@c.iframeName">@c.menuText</a>
                             </li>
                         }
                     </ul>

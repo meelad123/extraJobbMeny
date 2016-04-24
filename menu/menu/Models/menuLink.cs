@@ -13,6 +13,7 @@ namespace menu.Models
         public string menuURl { get; set; }
         public int? parentId { get; set; }
         public bool last { get; set; }
+        public string iframeName { get; set; }
 
         /*Metod: Hämtar alla länkarna från databasen och sparar dem i en lista*/
         public static List<menuLink> getAllLinks(int roleId)
@@ -44,6 +45,7 @@ namespace menu.Models
                         menuLinksDB.parentId = 0;
                     }
                     menuLinksDB.last = Convert.ToBoolean(dar["Last"]);
+                    menuLinksDB.iframeName = dar["iframeName"] as string;
 
                     results.Add(menuLinksDB);
                 }
